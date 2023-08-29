@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 
-import Contents from './components/Contents';
+// import Contents from './components/Contents';
 import Nav from './components/Nav';
+import { Route, Routes } from 'react-router-dom';
+import Main from './pages/Main';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import Notpage from './pages/Notpage';
+// import Styled from './components/Styled';
 
 function App() {
   // let Name = "이영웅";
@@ -10,23 +16,32 @@ function App() {
   // let Name = "홍길동"
   // let b = ""
   return (
-
-    <div className="App">
-      {/* <h3 className={Name} style={{color: "orange", backgroundColor: "skyblue"}}>Hello React {Name}</h3> */}
+      <>
       <Nav />
-      {/* <Contents /> */}
-      <div className='content'>
-        <Contents arrayNum="0" />
-        <Contents arrayNum="1" />
-        <Contents arrayNum="2" />
-        <Contents arrayNum="3" />
+      <Routes>
+        <Route path="/" element = {<Main/>}/>
+        <Route path="/about" element = {<About/>}/>
+        <Route path="/portfolio" element = {<Portfolio/>}/>
+        <Route path="/*" element = {<Notpage/>}/>
 
-        <Contents arrayNum="4" />
-        <Contents arrayNum="5" />
-        <Contents arrayNum="6" />
-        <Contents arrayNum="7" />
-      </div>
-    </div>
+      </Routes>
+      </>
+
+    // <div className="App">
+    //   <div className='content'>
+        
+    //     <Contents arrayNum="0" />
+    //     <Contents arrayNum="1" />
+    //     <Contents arrayNum="2" />
+    //     <Contents arrayNum="3" />
+
+    //     <Contents arrayNum="4" />
+    //     <Contents arrayNum="5" />
+    //     <Contents arrayNum="6" />
+    //     <Contents arrayNum="7" />
+    //   </div>
+    //   <Styled />
+    // </div>
   );
 }
 
